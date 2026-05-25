@@ -1,5 +1,4 @@
 import {cloneTemplate} from "../lib/utils.js";
-
 /**
  * Инициализирует таблицу и вызывает коллбэк при любых изменениях и нажатиях на кнопки
  *
@@ -10,7 +9,7 @@ import {cloneTemplate} from "../lib/utils.js";
 export function initTable(settings, onAction) {
     const {tableTemplate, rowTemplate, before, after} = settings;
     const root = cloneTemplate(tableTemplate);
-
+    
     // @todo: #1.2 —  вывести дополнительные шаблоны до и после таблицы
     before.reverse().forEach(subName => {                            // перебираем нужный массив идентификаторов
         root[subName] = cloneTemplate(subName);            // клонируем и получаем объект, сохраняем в таблице
